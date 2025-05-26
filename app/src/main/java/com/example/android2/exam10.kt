@@ -4,6 +4,7 @@ import android.graphics.Color
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.SubMenu
 import android.widget.Button
 import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
@@ -11,26 +12,20 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class MainActivity : AppCompatActivity() {
-    // 참조하기 위한 변수 선언
+class exam10 : AppCompatActivity() {
     lateinit var baseLayout : LinearLayout
     lateinit var button1 : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // 시스템 상태바, 내비게인션바까지 레이아웃 확장(엣지 투 엣지 UI)
         enableEdgeToEdge()
-
-        // 레이아웃 설정
         setContentView(R.layout.activity_main)
-        title = "배경색 바꾸기"
+        title = "배경색 바꾸기 ver.2"
 
-        // 레이아웃 내부 요소 연결
         baseLayout = findViewById(R.id.baseLayout)
         button1 = findViewById(R.id.button1)
 
-        // 시스템 바(상단/하단 바) 영역을 피해서 내부 콘텐츠가 보이도록 padding 설정
         ViewCompat.setOnApplyWindowInsetsListener(baseLayout) { view, insets ->
             val systemInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             view.setPadding(
@@ -43,45 +38,43 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // 옵션 메뉴 생성 메소드(앱 상단 메뉴 버튼 눌렀을 때 나오는 항목들)
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)
-        var mInflater = menuInflater
-        // 메뉴 리소스를 코드로 불러와 메뉴에 추가
-        menuInflater.inflate(R.menu.menu1, menu)
+
+        menu!!.add(0, 1, 0, "배경색 (빨강)")
+        menu!!.add(0, 2, 0, "배경색 (초록)")
+        menu!!.add(0, 3, 0, "배경색 (파랑)")
+
+        var sMenu : SubMenu = menu.addSubMenu("버튼 변경 >>")
+        sMenu.add(0, 4, 0,"버튼 45도 회전")
+        sMenu.add(0, 5, 0,"버튼 2배 확대")
+
         return true
     }
 
-    // 옵션 메뉴에서 항목을 클릭했을 시 동작 정의
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            // Red 항목 클릭 시 배경을 빨간색으로 변경
-            R.id.itemRed -> {
+            1 -> {
                 baseLayout.setBackgroundColor(Color.RED)
                 return true
             }
-            // Green 항목 클릭 시 배경을 초록색으로 변경
-            R.id.itemGreen -> {
+            2 -> {
                 baseLayout.setBackgroundColor(Color.GREEN)
                 return true
             }
-            // Blue 항목 클릭 시 배경을 파란색으로 변경
-            R.id.itemBlue -> {
+            3 -> {
                 baseLayout.setBackgroundColor(Color.BLUE)
                 return true
             }
-            // 회전 서브메뉴 클릭 시 45도 각도로 회전
-            R.id.subRotate -> {
+            4 -> {
                 button1.rotation = 45f
                 return true
             }
-            // 확대 서브메뉴 클릭 시 버튼의 가로 크기 2배 확대
-            R.id.subSize -> {
+            5 -> {
                 button1.scaleX = 2f
                 return true
             }
         }
-        // 아무 것도 처리되지 않은 경우 기본 동작 수행
         return false
     }
 }
