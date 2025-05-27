@@ -23,6 +23,8 @@
         </activity>
         <activity android:name=".exam10" android:exported="true"/>
         <activity android:name=".practice10" android:exported="true"/>
+        <activity android:name=".exam11" android:exported="true"/>
+        <activity android:name=".exam12" android:exported="true"/>
     </application>
 
 </manifest>
