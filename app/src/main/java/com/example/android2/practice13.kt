@@ -1,6 +1,7 @@
 package com.example.android2
 
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -36,7 +37,7 @@ class practice13 : AppCompatActivity() {
             dlg.setView(dialogView)
             dlg.setPositiveButton("확인",null)
             dlg.setNegativeButton("취소", null)
-            dlg.show()
+
 
             dlg.setPositiveButton("확인") {dialog, which ->
                 dlgEdtName = dialogView.findViewById(R.id.dlgEdit1)
@@ -45,13 +46,18 @@ class practice13 : AppCompatActivity() {
                 tvEmail.text = dlgEdtEmail.text.toString()
             }
             dlg.setNegativeButton("취소") {dialog, which ->
-                var toast = Toast(this@practice13)
                 toastView = View.inflate(this@practice13, R.layout.toast1, null)
                 toastText = toastView.findViewById(R.id.toastText1)
                 toastText.text = "취소했습니다"
+
+                val toast = Toast(this@practice13)
                 toast.view = toastView
+                // 무작위 위치 (예: x:100, y:500 위치에 표시)
+                toast.setGravity(Gravity.TOP or Gravity.START, 100, 500)
+                toast.duration = Toast.LENGTH_SHORT
                 toast.show()
             }
+            dlg.show()
         }
     }
 }
