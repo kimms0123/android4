@@ -36,11 +36,11 @@ class exam14 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_exam14)
 
-        // 📌 버튼 참조: 레이아웃에서 버튼 연결
+        // 버튼 참조: 레이아웃에서 버튼 연결
         val btnRead: Button = findViewById(R.id.btnRead)
         val btnWrite: Button = findViewById(R.id.btnWrite)
 
-        // 🔽 [쓰기 기능] - 버튼 클릭 시 file.txt 파일에 문자열 저장
+        // [쓰기 기능] - 버튼 클릭 시 file.txt 파일에 문자열 저장
         btnWrite.setOnClickListener {
             // 🔧 내부 저장소에 file.txt 파일을 생성(또는 덮어쓰기)
             // MODE_PRIVATE: 같은 파일명 있을 경우 덮어쓰기 (기본값)
@@ -59,7 +59,7 @@ class exam14 : AppCompatActivity() {
             Toast.makeText(applicationContext, "file.txt 가 저장됨", Toast.LENGTH_SHORT).show()
         }
 
-        // 🔽 [읽기 기능] - 버튼 클릭 시 file.txt 파일의 내용 읽어오기
+        // [읽기 기능] - 버튼 클릭 시 file.txt 파일의 내용 읽어오기
         btnRead.setOnClickListener {
             try {
                 // 🔧 내부 저장소에서 file.txt 파일 열기 (읽기 전용)
@@ -80,7 +80,7 @@ class exam14 : AppCompatActivity() {
                 // 스트림 닫기
                 inFs.close()
             } catch (e: IOException) {
-                // 🔺 파일이 존재하지 않거나 읽는 도중 오류 발생 시
+                // 파일이 존재하지 않거나 읽는 도중 오류 발생 시
                 Toast.makeText(applicationContext, "파일 없음", Toast.LENGTH_SHORT).show()
             }
         }

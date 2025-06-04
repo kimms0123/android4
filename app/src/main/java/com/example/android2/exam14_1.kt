@@ -14,6 +14,7 @@ import java.io.IOException
 
 class exam14_1 : AppCompatActivity() {
     // 실습 8-1 : 간단 일기장 앱 만들기
+    // 직접풀어보기 8-1
     lateinit var dp: DatePicker
     lateinit var edtDiary: EditText
     lateinit var btnWrite: Button
