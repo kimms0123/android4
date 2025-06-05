@@ -30,6 +30,7 @@
         <activity android:name=".practice14" android:exported="true"/>
         <activity android:name=".exam14" android:exported="true"/>
         <activity android:name=".exam14_1" android:exported="true"/>
+        <activity android:name=".exam15" android:exported="true"/>
     </application>
 
 </manifest>
