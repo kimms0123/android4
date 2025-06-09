@@ -2,7 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- 외부 저장소 권한 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
+
     <application
+        android:requestLegacyExternalStorage="true"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -31,6 +38,7 @@
         <activity android:name=".exam14" android:exported="true"/>
         <activity android:name=".exam14_1" android:exported="true"/>
         <activity android:name=".exam15" android:exported="true"/>
+        <activity android:name=".exam16" android:exported="true"/>
     </application>
 
 </manifest>
