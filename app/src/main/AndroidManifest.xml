@@ -43,6 +43,9 @@
         <activity android:name=".exam17_1" android:exported="true"/>
         <activity android:name=".exam18" android:exported="true"/>
         <activity android:name=".exam18_1" android:exported="true"/>
+        <activity android:name=".exam19" android:exported="true"/>
+        <activity android:name=".exam19_1" android:exported="true"/>
+        <activity android:name=".exam19_2" android:exported="true"/>
     </application>
 
 </manifest>
