@@ -47,6 +47,9 @@
         <activity android:name=".exam19_1" android:exported="true"/>
         <activity android:name=".exam19_2" android:exported="true"/>
         <activity android:name=".exam19_3" android:exported="true"/>
+        <activity android:name=".exam20" android:exported="true"/>
+        <activity android:name=".exam20_second" android:exported="true"/>
+        <activity android:name=".RatingBarExam" android:exported="true"/>
     </application>
 
 </manifest>
