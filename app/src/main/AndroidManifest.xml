@@ -50,6 +50,8 @@
         <activity android:name=".exam20" android:exported="true"/>
         <activity android:name=".exam20_second" android:exported="true"/>
         <activity android:name=".RatingBarExam" android:exported="true"/>
+        <activity android:name=".practice15" android:exported="true"/>
+        <activity android:name=".ResultActivity" android:exported="true"/>
     </application>
 
 </manifest>
