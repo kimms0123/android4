@@ -52,6 +52,8 @@
         <activity android:name=".RatingBarExam" android:exported="true"/>
         <activity android:name=".practice15" android:exported="true"/>
         <activity android:name=".ResultActivity" android:exported="true"/>
+        <activity android:name=".exam21" android:exported="true"/>
+        <activity android:name=".exam21_second" android:exported="true"/>
     </application>
 
 </manifest>
