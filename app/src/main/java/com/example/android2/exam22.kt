@@ -15,16 +15,37 @@ import androidx.core.net.toUri
         - 약속된 액션을 지정하여 안드로이드에서 제공하는 기존 응용 프로그램을 실행
         👉 안드로이드 시스템에 "이런 행동을 하고 싶다"고 알려서 해당 액션을 처리할 수 있는 앱을 찾아 실행하는 방법
         [암시적 인텐트 개념 그림]
-        [대표적인 암시적 인텐트 종류]
-    [전화 걸기/구글맵(필수) 사용 권한 추가]
-    ```
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
-    <!-- ⇓ 해당 디바이스가 전화 기능(telephony hardware)을 요구하는지 여부를 명시해야 함.(안하면 위에 코드 오류남) -->
-    <uses-feature android:name="android.hardware.telephony" android:required="false" />
 
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    ```
+        [대표적인 암시적 인텐트 종류]
+            - Intent.ACTION_VIEW: 콘텐츠(웹페이지, 이미지, 위치등)를 적절한 앱으로 보여줌
+            - .ACTION_DIAL: 전화 다이얼 화면에 번호 표시
+            - .ACTION_CALL: 지정된 전화번호로 바로 전화걸기(권한 필요)
+            - .ACTION_SENDTO: sms나 메일 등 특정 URI 스킴 전용 앱 실행
+            - .ACTION_SEND: 텍스트, 이미지 등 데이터를 다른 앱으로 공유
+            - .ACTION_WEB_SEARCH: 웹 검색 앱 실행하여 검색어로 검색
+            - .ACTION_EDIT: 콘텐츠를 수정할 수 있는 앱
+            - .ACTION_PICK: 특정 데이터를 선택할 수 있는 앱
+            - MediaStore.ACTION_IMAGE_CAP: 카메라 앱 실행하여 사진 촬영
+        [동작 원리]
+            1. 액션과 데이터 타입을 인텐트로 설정
+            2. 안드로이드 시스템이 해당 인텐트를 처리할 수 있는 앱 목록 확인
+            3. 여러개 일 경우 선택창 표시
+            4. 해당 앱으로 실행
+        [❗주의]
+            - 일부 액션(ACTION_CALL, 위치, 카메라)은 권한 선언 필요
+            - 인텐트에 필요한 URI형식 반드시 맞춰야 함(tel:, smsto:, mailto: ···)
+            - 처리 가능한 앱이 없는 경우 ActivityNotFoundException 발생 가능 -> 예외처리 필수
+
+
+    [전화 걸기/구글맵(필수) 사용 권한 추가]
+        ```
+        <uses-permission android:name="android.permission.CALL_PHONE"/>
+        <!-- ⇓ 해당 디바이스가 전화 기능(telephony hardware)을 요구하는지 여부를 명시해야 함.(안하면 위에 코드 오류남) -->
+        <uses-feature android:name="android.hardware.telephony" android:required="false" />
+
+        <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+        <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+        ```
  */
 class exam22 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
