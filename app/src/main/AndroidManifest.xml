@@ -60,6 +60,7 @@
         <activity android:name=".exam21" android:exported="true"/>
         <activity android:name=".exam21_second" android:exported="true"/>
         <activity android:name=".exam22" android:exported="true"/>
+        <activity android:name=".exam23" android:exported="true"/>
     </application>
 
 </manifest>
