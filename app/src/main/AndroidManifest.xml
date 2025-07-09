@@ -61,6 +61,8 @@
         <activity android:name=".exam21_second" android:exported="true"/>
         <activity android:name=".exam22" android:exported="true"/>
         <activity android:name=".exam23" android:exported="true"/>
+        <activity android:name=".ListVeiw_GridView" android:exported="true"/>
+        <activity android:name=".ListView_add_delete" android:exported="true"/>
     </application>
 
 </manifest>
