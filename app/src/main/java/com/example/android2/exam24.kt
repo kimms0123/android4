@@ -42,6 +42,18 @@ class exam24 : AppCompatActivity() {
             R.drawable.pic7, R.drawable.pic8, R.drawable.pic9
         )
 
+        // 직접 풀어보기
+        var posterName = arrayOf(
+            "책을 읽는 소녀", "빈센트 반 고흐의 방", "진주 귀걸이를 한 소녀",
+            "비내리는 남자", "다리", "모나리자", "양산을 든 소녀", "별이 내리는 밤", "나폴레옹",
+            "책을 읽는 소녀", "빈센트 반 고흐의 방", "진주 귀걸이를 한 소녀",
+            "비내리는 남자", "다리", "모나리자", "양산을 든 소녀", "별이 내리는 밤", "나폴레옹",
+            "책을 읽는 소녀", "빈센트 반 고흐의 방", "진주 귀걸이를 한 소녀",
+            "비내리는 남자", "다리", "모나리자", "양산을 든 소녀", "별이 내리는 밤", "나폴레옹",
+            "책을 읽는 소녀", "빈센트 반 고흐의 방", "진주 귀걸이를 한 소녀",
+            "비내리는 남자", "다리", "모나리자", "양산을 든 소녀", "별이 내리는 밤", "나폴레옹",
+        )
+
         // 그리드뷰에 표시할 총 아이템 개수 반환
         override fun getCount(): Int {
             return posterID.size
@@ -89,7 +101,8 @@ class exam24 : AppCompatActivity() {
                 ivPoster.setImageResource(posterID[p0])
 
                 // 다이얼로그 타이틀 설정
-                dlg.setTitle("큰포스터")
+                // dlg.setTitle("큰 이미지")
+                dlg.setTitle(posterName[p0])
 
                 // 다이얼로그 아이콘 설정
                 dlg.setIcon(R.drawable.ic_launcher_foreground)
